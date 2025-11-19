@@ -3,10 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <style>
+html, body {
+  background: transparent !important;   /* Hace el fondo 100% transparente */
+  margin: 0;
+  padding: 0;
+}
+
 #contenedor {
   width: 100%;
   overflow: hidden;
   transition: height 0.3s ease;
+  background: transparent !important;
 }
 
 #banner {
@@ -17,6 +24,7 @@
   font-size: 17px;
   position: relative;
   border: 1px solid #e3c652;
+  box-sizing: border-box;
 }
 
 #cerrar {
@@ -25,26 +33,4 @@
   top: 10px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 18px;
-}
-</style>
-</head>
-<body>
-
-<div id="contenedor">
-  <div id="banner">
-    ⚠ Aviso importante: Hoy habrá mantenimiento del E-Call a las 18 hs.
-    <span id="cerrar">✖</span>
-  </div>
-</div>
-
-<script>
-document.getElementById("cerrar").onclick = function() {
-  document.getElementById("banner").style.display = "none";
-  document.getElementById("contenedor").style.height = "0px"; // ACHICA EL IFRAME
-};
-</script>
-
-</body>
-</html>
 
