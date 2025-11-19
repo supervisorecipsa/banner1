@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <style>
+#contenedor {
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
 #banner {
   background: #ffeb99;
   padding: 14px;
@@ -12,6 +18,7 @@
   position: relative;
   border: 1px solid #e3c652;
 }
+
 #cerrar {
   position: absolute;
   right: 14px;
@@ -23,16 +30,21 @@
 </style>
 </head>
 <body>
-<div id="banner">
-  ⚠ Aviso importante: Hoy habrá mantenimiento del E-Call a las 18 hs.
-  <span id="cerrar">✖</span>
+
+<div id="contenedor">
+  <div id="banner">
+    ⚠ Aviso importante: Hoy habrá mantenimiento del E-Call a las 18 hs.
+    <span id="cerrar">✖</span>
+  </div>
 </div>
 
 <script>
 document.getElementById("cerrar").onclick = function() {
   document.getElementById("banner").style.display = "none";
+  document.getElementById("contenedor").style.height = "0px"; // ACHICA EL IFRAME
 };
 </script>
 
 </body>
 </html>
+
